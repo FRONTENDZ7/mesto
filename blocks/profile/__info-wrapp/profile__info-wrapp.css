@@ -1,7 +1,7 @@
 .profile__info-wrapp {
   display: flex;
   gap: 18px;
-  align-items: baseline;
+  align-items: center;
 }
 
 @media (max-width: 425px) {
