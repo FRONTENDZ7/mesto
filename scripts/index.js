@@ -11,11 +11,11 @@ let subtitle = document.querySelector('.profile__subtitle');
 edit.addEventListener('click',()=>{
     inputName.value = title.textContent;
     inputJob.value = subtitle.textContent;
-    popup.classList.add('popup_active')
+    popup.classList.add('popup_opened')
 });
 
 close.addEventListener('click',()=>{
-    popup.classList.remove('popup_active')
+    popup.classList.remove('popup_opened')
 });
 
 
@@ -23,7 +23,7 @@ function formSave(evt) {
     evt.preventDefault();
     title.textContent = inputName.value;
     subtitle.textContent = inputJob.value;
-    popup.classList.remove('popup_active');
+    popup.classList.remove('popup_opened');
 }
 
 formBody.addEventListener('submit', formSave);
