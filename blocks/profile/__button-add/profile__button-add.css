@@ -32,7 +32,7 @@
   }
 }
 
-@media (max-width: 540px) {
+@media (max-width: 630px) {
   .profile__button-add {
     max-width: 282px;
     max-height: 50px;

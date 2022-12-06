@@ -6,7 +6,7 @@
   padding-bottom: 50px;
 }
 
-@media (max-width: 540px) {
+@media (max-width: 630px) {
   .profile {
     flex-direction: column;
     gap: 36px;

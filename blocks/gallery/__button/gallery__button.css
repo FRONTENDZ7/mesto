@@ -9,7 +9,11 @@
   border: 1px solid #ffffff;
 }
 .gallery__button:hover {
-  opacity: 0.6;
+  opacity: 0.5;
   cursor: pointer;
   transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
