@@ -1,0 +1,33 @@
+.popup__create {
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 48px;
+  padding: 14px 0 18px 0;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 2px;
+  border: none;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+.popup__create:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+
+@media (max-width: 425px) {
+  .popup__create {
+    margin-top: 45px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
