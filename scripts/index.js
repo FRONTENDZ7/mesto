@@ -1,29 +1,29 @@
 const initialCards = [
-    {
-      name: 'Карачаевск',
-      link: 'images/karachayevsk.png'
-    },
-    {
-      name: 'Эльбрус',
-      link: 'images/elbrus.png'
-    },
-    {
-      name: 'Домбай',
-      link: 'images/dombay.png'
-    },
-    {
-      name: 'Эльбрус',
-      link: 'images/elbrus.png'
-    },
-    {
-      name: 'Домбай',
-      link: 'images/dombay.png'
-    },
-    {
-      name: 'Карачаево-Черкеск',
-      link: 'images/karachayevsk.png'
-    }
-  ];
+  {
+    name: 'Архыз',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+  },
+  {
+    name: 'Челябинская область',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+  },
+  {
+    name: 'Иваново',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+  },
+  {
+    name: 'Камчатка',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+  },
+  {
+    name: 'Холмогорский район',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+  },
+  {
+    name: 'Байкал',
+    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+  }
+];
 
 const popup = document.querySelector('.popup');
 const popupAdd = document.querySelector('.popup_add');
