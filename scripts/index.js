@@ -32,7 +32,7 @@ const popupOpenImage = document.querySelector('.popup_open-image');
 const popupEditClose = document.querySelector('.popup__close_edit');
 const popupImageClose = document.querySelector('.popup__close_image');
 const popupAddClose = document.querySelector('.popup__close_add');
-const formSaveCard = popupAdd.querySelector('.popup__container');
+const popupFormAdd = popupAdd.querySelector('.popup__form_add');
 const popupFormEdit = document.querySelector('.popup__form_edit');
 
 const inputName = document.querySelector('.popup__input_type_name');
@@ -135,4 +135,4 @@ function submitSaveForm(evt) {
 
 popupFormEdit.addEventListener('submit', submitSaveForm);
 
-formSaveCard.addEventListener('submit', submitCardForm);
+popupFormAdd.addEventListener('submit', submitCardForm);
