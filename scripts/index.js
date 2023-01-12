@@ -1,31 +1,4 @@
-const initialCards = [
-  {
-    name: 'Роза хутор',
-    link: 'https://images.unsplash.com/photo-1601035821612-8cb0ffba4083?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'
-  },
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
-
+const popups = document.querySelectorAll('.popup');
 const popupAdd = document.querySelector('.popup_add');
 const popupEdit = document.querySelector('.popup_edit');
 const popupOpenImage = document.querySelector('.popup_open-image');
@@ -95,11 +68,35 @@ initialCards.forEach(elementCard => {
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEscape);
 };
-
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
 };
+
+function closePopupOverley(evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+
+  if (evt.target === popupOpened) {
+    closePopup(popupOpened);
+  };
+};
+
+function closePopupEscape(evt) {
+  const popupOpened = document.querySelector('.popup_opened');
+
+  if (evt.key === 'Escape') {
+    closePopup(popupOpened);
+  };
+};
+
+popups.forEach((element) => {
+  const popup = element.closest('.popup');
+  popup.addEventListener('click', (evt) => closePopupOverley(evt, popup));
+});
+
+
+
 
 profileButtonEdit.addEventListener('click',()=>{
   inputName.value = profileTitle.textContent;
@@ -136,3 +133,16 @@ function submitSaveForm(evt) {
 popupFormEdit.addEventListener('submit', submitSaveForm);
 
 popupFormAdd.addEventListener('submit', submitCardForm);
+
+
+
+const structure = {
+  formSelector: '.popup__form',
+  inputSelector: '.popup__input',
+  submitButtonSelector: '.popup__button',
+  inactiveButtonClass: 'popup__button_disabled',
+  inputErrorClass: 'popup__input_type_error',
+  errorClass: 'popup__error_visible'
+};
+
+enableValidation(structure);
