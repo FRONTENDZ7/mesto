@@ -5,4 +5,6 @@
   max-height: 282px;
   object-fit: cover;
   cursor: pointer;
+  color: white;
+  background-color: #000000;
 }

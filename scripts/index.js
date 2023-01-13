@@ -70,48 +70,51 @@ function openPopup(popup) {
   popup.classList.add('popup_opened');
   document.addEventListener('keydown', closePopupEscape);
 };
+
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEscape);
 };
 
-function closePopupOverley(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-
-  if (evt.target === popupOpened) {
-    closePopup(popupOpened);
+function closePopupOverlay(evt) {
+  if (evt.target === evt.currentTarget) {
+    closePopup(evt.currentTarget);
   };
 };
 
 function closePopupEscape(evt) {
-  const popupOpened = document.querySelector('.popup_opened');
-
   if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
     closePopup(popupOpened);
   };
 };
 
-popups.forEach((element) => {
-  const popup = element.closest('.popup');
-  popup.addEventListener('click', (evt) => closePopupOverley(evt, popup));
+popups.forEach((popup) => {
+  popup.addEventListener('click', closePopupOverlay);
 });
 
-
-
+function returnsButtonEvent(popup) {
+  const button = popup.querySelector('.popup__button');
+  button.classList.add(configuration.inactiveButtonClass);
+};
 
 profileButtonEdit.addEventListener('click',()=>{
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
   openPopup(popupEdit);
+  returnsButtonEvent(popupEdit);
 });
 
 profileButtonAdd.addEventListener('click',()=>{
   inputTitle.value = '';
   inputLink.value = '';
   openPopup(popupAdd);
+  returnsButtonEvent(popupAdd);
 });
 
 popupEditClose.addEventListener('click',()=>{
   closePopup(popupEdit);
+  
 });
 
 popupAddClose.addEventListener('click',()=>{
@@ -122,7 +125,7 @@ popupImageClose.addEventListener('click',()=>{
   closePopup(popupOpenImage);
 });
 
-function submitSaveForm(evt) {
+function submitEditForm(evt) {
   evt.preventDefault();
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputJob.value;
@@ -130,13 +133,13 @@ function submitSaveForm(evt) {
 };
 
 
-popupFormEdit.addEventListener('submit', submitSaveForm);
+popupFormEdit.addEventListener('submit', submitEditForm);
 
 popupFormAdd.addEventListener('submit', submitCardForm);
 
 
 
-const structure = {
+const configuration = {
   formSelector: '.popup__form',
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button',
@@ -145,4 +148,4 @@ const structure = {
   errorClass: 'popup__error_visible'
 };
 
-enableValidation(structure);
+enableValidation(configuration);
