@@ -93,32 +93,40 @@ popups.forEach((popup) => {
   popup.addEventListener('click', closePopupOverlay);
 });
 
-function returnsButtonEvent(popup) {
+function returnsButtonDisabled(popup) {
   const button = popup.querySelector('.popup__button');
   button.classList.add(configuration.inactiveButtonClass);
+  button.disabled = true; 
+};
+
+function returnsButtonEnabled(popup) {
+  const button = popup.querySelector('.popup__button');
+  button.classList.remove(configuration.inactiveButtonClass);
+  button.disabled = false; 
 };
 
 profileButtonEdit.addEventListener('click',()=>{
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
   openPopup(popupEdit);
-  returnsButtonEvent(popupEdit);
+  returnsButtonDisabled(popupEdit);
 });
 
 profileButtonAdd.addEventListener('click',()=>{
   inputTitle.value = '';
   inputLink.value = '';
   openPopup(popupAdd);
-  returnsButtonEvent(popupAdd);
+  returnsButtonDisabled(popupAdd);
 });
 
 popupEditClose.addEventListener('click',()=>{
   closePopup(popupEdit);
-  
+  returnsButtonEnabled(popupEdit);
 });
 
 popupAddClose.addEventListener('click',()=>{
   closePopup(popupAdd);
+  returnsButtonEnabled(popupAdd);
 });
 
 popupImageClose.addEventListener('click',()=>{
@@ -130,6 +138,7 @@ function submitEditForm(evt) {
   profileTitle.textContent = inputName.value;
   profileSubtitle.textContent = inputJob.value;
   closePopup(popupEdit);
+  
 };
 
 

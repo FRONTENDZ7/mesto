@@ -1,4 +1,3 @@
-
 const enableValidation = (configuration) => {
   const formConfig = Array.from(document.querySelectorAll(configuration.formSelector));
   formConfig.forEach((formElement) => {
@@ -41,6 +40,7 @@ const controlsInputValidity = (formElement, inputElement, configuration) => {
   }
 }; 
 
+
 const toggleButtonStatus = (inputFields, buttonElement, configuration) => {
   if (hasInvalidInput(inputFields)) {
     buttonElement.classList.add(configuration.inactiveButtonClass);
@@ -56,6 +56,7 @@ const hasInvalidInput = (inputFields) => {
     return !inputElement.validity.valid;
   })
 }; 
+ 
 
 
 
