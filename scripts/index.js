@@ -79,6 +79,7 @@ function closePopup(popup) {
 function closePopupOverlay(evt) {
   if (evt.target === evt.currentTarget) {
     closePopup(evt.currentTarget);
+    
   };
 };
 
@@ -93,13 +94,13 @@ popups.forEach((popup) => {
   popup.addEventListener('click', closePopupOverlay);
 });
 
-function returnsButtonDisabled(popup) {
+function setButtonDisabled(popup) {
   const button = popup.querySelector('.popup__button');
   button.classList.add(configuration.inactiveButtonClass);
   button.disabled = true; 
 };
 
-function returnsButtonEnabled(popup) {
+function setButtonEnabled(popup) {
   const button = popup.querySelector('.popup__button');
   button.classList.remove(configuration.inactiveButtonClass);
   button.disabled = false; 
@@ -109,24 +110,22 @@ profileButtonEdit.addEventListener('click',()=>{
   inputName.value = profileTitle.textContent;
   inputJob.value = profileSubtitle.textContent;
   openPopup(popupEdit);
-  returnsButtonDisabled(popupEdit);
+  setButtonDisabled(popupEdit);
 });
 
 profileButtonAdd.addEventListener('click',()=>{
   inputTitle.value = '';
   inputLink.value = '';
   openPopup(popupAdd);
-  returnsButtonDisabled(popupAdd);
+  setButtonDisabled(popupAdd);
 });
 
 popupEditClose.addEventListener('click',()=>{
   closePopup(popupEdit);
-  returnsButtonEnabled(popupEdit);
 });
 
 popupAddClose.addEventListener('click',()=>{
   closePopup(popupAdd);
-  returnsButtonEnabled(popupAdd);
 });
 
 popupImageClose.addEventListener('click',()=>{
