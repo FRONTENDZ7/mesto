@@ -96,14 +96,12 @@ popups.forEach((popup) => {
 
 function setButtonDisabled(popup) {
   const button = popup.querySelector('.popup__button');
-  button.classList.add(configuration.inactiveButtonClass);
-  button.disabled = true; 
+  disabledButton(button, configuration);
 };
 
 function setButtonEnabled(popup) {
   const button = popup.querySelector('.popup__button');
-  button.classList.remove(configuration.inactiveButtonClass);
-  button.disabled = false; 
+  enableButton(button, configuration);
 };
 
 profileButtonEdit.addEventListener('click',()=>{

@@ -41,15 +41,21 @@ const controlsInputValidity = (formElement, inputElement, configuration) => {
 }; 
 
 
+const disabledButton = (buttonElement, configuration) => {
+  buttonElement.classList.add(configuration.inactiveButtonClass); 
+  buttonElement.disabled = true; 
+};
+const enableButton = (buttonElement, configuration) => {
+  buttonElement.classList.remove(configuration.inactiveButtonClass); 
+  buttonElement.disabled = false; 
+};
 const toggleButtonStatus = (inputFields, buttonElement, configuration) => {
   if (hasInvalidInput(inputFields)) {
-    buttonElement.classList.add(configuration.inactiveButtonClass);
-    buttonElement.disabled = true;
+    disabledButton(buttonElement, configuration);
   } else {
-    buttonElement.classList.remove(configuration.inactiveButtonClass);
-    buttonElement.disabled = false;
+    enableButton(buttonElement, configuration);
   }
-}; 
+};  
 
 const hasInvalidInput = (inputFields) => {
   return inputFields.some((inputElement) => {
