@@ -24,4 +24,6 @@ const initialCards = [
       link: 'https://tripplanet.ru/wp-content/uploads/europe/russia/baikal/dostoprimechatelnosti-bajkala.jpg'
     }
   ];
+
+  export default initialCards;
  

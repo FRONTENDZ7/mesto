@@ -34,7 +34,7 @@
         <div class="popup popup_edit">
             <div class="popup__container">
                 <button type="button" class="popup__close popup__close_edit"></button>
-                <form action="#" name="formEdit" class="popup__form popup__form_edit" novalidate>
+                <form action="#" name="formEdit" class="popup__form" novalidate>
                     <h3 class="popup__title">Редактировать профиль</h3>
                     <input class="popup__input popup__input_type_name" id="name" placeholder="Ваше имя" type="text" name="name" minlength="2" maxlength="40" required>
                     <span class="popup__error name-error"></span> 
@@ -48,7 +48,7 @@
         <div class="popup popup_add">
             <div class="popup__container">
                 <button type="button" class="popup__close popup__close_add"></button>
-                <form action="#" name="formAdd" class="popup__form popup__form_add">
+                <form action="#" name="formAdd" class="popup__form" novalidate>
                     <h3 class="popup__title">Новое место</h3>
                     <input class="popup__input popup__input_type_title" id="title" placeholder="Название" type="text" name="title" minlength="2" maxlength="30" required>
                     <span class="popup__error title-error"></span>
@@ -79,9 +79,9 @@
                 <button class="gallery__button-remove" type="button"></button>
             </article>
         </template>
+
     </div>
-    <script src="scripts/validate.js" defer></script>
-    <script src="scripts/cards.js" defer></script>
-    <script src="scripts/index.js" defer></script>
+    
+    <script type="module" src="scripts/index.js"></script>
 </body>
 </html>
