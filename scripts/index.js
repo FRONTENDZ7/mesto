@@ -32,9 +32,8 @@ const configuration = {
 };
 
 const closePopupClick = (evt) => {
-  const popupOpened = document.querySelector('.popup_opened');
-  if (evt.target === popupOpened) {
-    handleClosePopup(popupOpened);
+  if (evt.target === evt.currentTarget) {
+    handleClosePopup(evt.target);
   };
 };
 
@@ -55,11 +54,17 @@ export const handleClosePopup = (popup) => {
   document.removeEventListener('keydown', closePopupEscape);
 };
 
-const handleSubmitFormAddCard = (evt) => {
-  evt.preventDefault();
+function createCard() {
   const card = new Card({name: inputTitle.value, link: inputLink.value}, '#gallery');
   const cardElement = card.createCard();
   sectionGallery.prepend(cardElement);
+
+  return cardElement;
+};
+
+const handleSubmitFormAddCard = (evt) => {
+  evt.preventDefault();
+  createCard();
   evt.target.reset();
   handleClosePopup(popupAdd);
 };

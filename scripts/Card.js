@@ -9,6 +9,7 @@ export class Card {
 
     createCard() {
       this._element = this._getTemplate();
+      this._elementLike = this._element.querySelector('.gallery__button');
       this._element.querySelector('.gallery__title').textContent = this._name;
       this._element.querySelector('.gallery__picture').alt = this._name;
       this._element.querySelector('.gallery__picture').src = this._link;
@@ -38,7 +39,7 @@ export class Card {
     };
 
     _handleClickLikeCard() {
-      this._element.querySelector('.gallery__button').classList.toggle('gallery__button_active');
+      this._elementLike.classList.toggle('gallery__button_active');
     };
   
     _setEventListeners() {
