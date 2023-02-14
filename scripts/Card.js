@@ -7,7 +7,7 @@ export class Card {
       this._link = data.link;
     };
 
-    createCard() {
+    generateCard() {
       this._element = this._getTemplate();
       this._elementLike = this._element.querySelector('.gallery__button');
       this._element.querySelector('.gallery__title').textContent = this._name;

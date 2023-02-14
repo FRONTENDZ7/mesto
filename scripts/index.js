@@ -54,18 +54,20 @@ export const handleClosePopup = (popup) => {
   document.removeEventListener('keydown', closePopupEscape);
 };
 
-function createCard() {
-  const card = new Card({name: inputTitle.value, link: inputLink.value}, '#gallery');
-  const cardElement = card.createCard();
-  sectionGallery.prepend(cardElement);
+function createCard(item) {
+  const card = new Card(item, '#gallery');
+  const cardElement = card.generateCard();
 
   return cardElement;
 };
 
 const handleSubmitFormAddCard = (evt) => {
   evt.preventDefault();
-  createCard();
-  evt.target.reset();
+  const newObject = {
+    name: inputTitle.value,
+    link: inputLink.value,
+  }
+  sectionGallery.prepend(createCard(newObject));
   handleClosePopup(popupAdd);
 };
 
@@ -113,9 +115,7 @@ popups.forEach((element) => {
 });
 
 initialCards.forEach((item) => {
-  const card = new Card(item, '#gallery');
-  const cardElement = card.createCard();
-  document.querySelector('.gallery').append(cardElement);
+  sectionGallery.append(createCard(item));
 });
 
 const formValidProfile = new FormValidator(configuration, popupEdit);
