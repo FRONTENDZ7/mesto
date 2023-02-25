@@ -39,12 +39,9 @@ const createCard = (formData) => {
 };
 
 const handleSubmitFormAddCard = new PopupWithForm('.popup_add', {
-  handleFormSubmit: () => {
-    const newObject = {
-      name: inputTitle.value,
-      link: inputLink.value,
-    };
-    sectionGallery.addItem(createCard(newObject));
+  handleFormSubmit: (formData) => {
+    const newObject = createCard(formData);
+    sectionGallery.addItem(newObject);
 
     handleSubmitFormAddCard.close();
   },
