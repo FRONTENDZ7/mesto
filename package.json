@@ -4,10 +4,10 @@
   "description": "Сайт Mesto",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack serve",
+    "dev": "webpack servee",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dists"
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
