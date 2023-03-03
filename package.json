@@ -4,7 +4,7 @@
   "description": "Сайт Mesto",
   "main": "webpack.config.js",
   "scripts": {
-    "dev": "webpack servee",
+    "dev": "webpack serve",
     "build": "webpack --mode production",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
