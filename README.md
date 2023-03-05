@@ -24,6 +24,10 @@ _Модуль PopupWithImage.js лежит в папке components._
 
 _Модуль PopupWithForm.js лежит в папке components._
 
+_Модуль Api.js лежит в папке components._
+
+_Модуль PopupDeleteCard.js лежит в папке components._
+
 _Модуль отвечающий за управление отображения информации о пользователе UserInfo.js лежит в папке components._
 
 _Модуль отвечающий за отрисовку элементов на странице Section.js лежит в папке components._
@@ -49,6 +53,8 @@ _На странице можно редактировать профиль , с
 *https://www.figma.com/file/bjyvbKKJN2naO0ucURl2Z0/JavaScript.-Sprint-5?node-id=0%3A1*
 
 *https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=0%3A1*
+
+*https://www.figma.com/file/PSdQFRHoxXJFs2FH8IXViF/JavaScript-9-sprint?node-id=0%3A1*
 
 **Ссылка на GitHub Pages:**
 *https://frontendz7.github.io/mesto/*
