@@ -1,6 +1,7 @@
  const MiniCssExtractPlugin = require('mini-css-extract-plugin');
  const HtmlWebpackPlugin = require('html-webpack-plugin');
  const path = require('path');
+ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
  
  module.exports = {
     mode: 'development',
@@ -39,7 +40,8 @@
         new HtmlWebpackPlugin({
             template: path.resolve(__dirname, 'src', 'index.html')
         }),
-        new MiniCssExtractPlugin()
+        new MiniCssExtractPlugin(),
+        new CleanWebpackPlugin()
     ],
     devServer: {
         port: 8080,
