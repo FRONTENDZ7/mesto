@@ -6,16 +6,17 @@ export class Section {
   };
 
   // renderItems() {
-  //   this._initialArray.map(res => {
+  //   this._initialArray.map((res) => {
   //       this._renderer(res)
   //   })
   // }
   renderItems() {
     this._initialArray.forEach((item) => {
       this._renderer(item); 
-    });
-  };
+    })
+  }
+  
   addItem(element) {
     this._container.prepend(element);
-  };
+  }
 }
