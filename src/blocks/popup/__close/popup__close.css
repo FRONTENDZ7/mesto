@@ -1,0 +1,27 @@
+.popup__close {
+  max-width: 32px;
+  height: 32px;
+  width: 100%;
+  background-size: contain;
+  border: none;
+  background-color: inherit;
+  background-image: url(../../../images/close.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.popup__close:hover {
+  opacity: 0.6;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+@media (max-width: 425px) {
+  .popup__close {
+    right: 0;
+    max-width: 20px;
+    height: 20px;
+  }
+}
