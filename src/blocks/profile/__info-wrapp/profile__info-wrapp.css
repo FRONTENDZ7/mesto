@@ -1,0 +1,11 @@
+.profile__info-wrapp {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+@media (max-width: 425px) {
+  .profile__info-wrapp {
+    gap: 10px;
+  }
+}
